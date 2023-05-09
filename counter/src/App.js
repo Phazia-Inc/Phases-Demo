@@ -1,41 +1,45 @@
-import React from 'react'
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = React.useState(0)
-  const [serverResponse, setServerResponse] = React.useState('')
-  
+  const [count, setCount] = useState(0);
+  const [serverResponse, setServerResponse] = useState("");
+
   function increment() {
-    setCount(count + 1)
+    setCount((count) => count + 1);
   }
 
-  const endpoint = 'http://localhost:8080/endpoint/test'
+  const endpoint = "http://localhost:8080/endpoint/test";
 
-  async function getServerResponse()  {
+  async function getServerResponse() {
     // submit a POST request to the endpoint
     fetch(endpoint, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message: 'Hello World' })
+      body: JSON.stringify({ message: "Hello World" }),
     })
-    .then(response => response.body.getReader().read()).then(result => {
-      // result is a Uint8Array
-      const decoder = new TextDecoder('utf-8')
-      const decodedString = decoder.decode(result.value)
-      setServerResponse(decodedString)
-    }
-    )
-
+      .then((response) => response.body.getReader().read())
+      .then((result) => {
+        // result is a Uint8Array
+        const decoder = new TextDecoder("utf-8");
+        const decodedString = decoder.decode(result.value);
+        setServerResponse(decodedString);
+      });
   }
 
   return (
     <div className="App">
-      <p>{count}</p>
-      <button onClick={increment}>Up by 1</button>
-      <button onClick={getServerResponse}>Get Server Response</button>
-      <p>Server Response: {serverResponse}</p>
+      <section className="header">
+        <p>Handle that Counter!</p>
+        <button onClick={increment}>Up by 1</button>
+      </section>
+      <section className="main">
+        <p>{count}</p>
+        <button onClick={getServerResponse}>Get Server Response</button>
+        <p>Server Response: {serverResponse}</p>
+      </section>
     </div>
   );
 }
