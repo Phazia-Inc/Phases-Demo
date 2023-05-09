@@ -1,0 +1,16 @@
+### IMPORTANT: Do not ignore package.json or package-lock.json. We use these to install dependencies for your project. ###
+### This file should be placed in the root directory of your frontend and your backend (if you have one). ###
+
+*.log
+logs
+node_modules
+.cache
+.vscode
+dist
+build
+coverage
+deployed-pages
+.git
+.gitignore
+*.zip
+		

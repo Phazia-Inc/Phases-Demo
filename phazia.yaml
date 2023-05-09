@@ -1,0 +1,7 @@
+# This is the configuration file for your Phazia project.
+# You can use this file to configure your project's settings.
+# Specify the path to your frontend here. Phazia will serve your frontend on the port specified by the PORT environment variable. (Default: 3000)
+frontend: "C:\Users\hasht\Documents\Coding\Phazia Sample\counter"
+# Phazia can also run your backend. Make sure your backend listens to the port specified by the PORT environment variable and has an npm start script. 
+# Specify the path to your backend here. If you don't want to run your backend, leave this blank.
+backend: "C:\Users\hasht\Documents\Coding\Phazia Sample\\backend"
