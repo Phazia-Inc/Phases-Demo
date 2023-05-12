@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <p>{count}</p>
-      <button onClick={increment}>Up by 1</button>
+      <button onClick={increment}>Increase</button>
       <button onClick={getServerResponse}>Get Server Response</button>
       <p>Server Response: {serverResponse}</p>
     </div>
