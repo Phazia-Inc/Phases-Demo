@@ -32,9 +32,10 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Spice up the UI!</h1>
       <p>{count}</p>
-      <button onClick={increment}>Up by 1</button>
-      <button onClick={getServerResponse}>Get Server Response</button>
+      <button className="button" onClick={increment}>Up by 1</button>
+      <button className="button" onClick={getServerResponse}>Get Server Response</button>
       <p>Server Response: {serverResponse}</p>
     </div>
   );
