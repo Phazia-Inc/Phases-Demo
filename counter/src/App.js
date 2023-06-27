@@ -27,15 +27,14 @@ function App() {
       setServerResponse(decodedString)
     }
     )
-
   }
 
   return (
     <div className="App">
-      <p>{count}</p>
+      <p style={{color: 'blue', fontWeight: 'bold'}}>{count}</p>
       <button onClick={increment}>Up by 1</button>
       <button onClick={getServerResponse}>Get Server Response</button>
-      <p>Server Response: {serverResponse}</p>
+      <p>The server said: {serverResponse}</p>
     </div>
   );
 }
